@@ -1,70 +1,54 @@
 # Agentic AI Based Smart Study Planner
 
-A full-stack web application that helps students generate intelligent study schedules using AI-based decision making.
+A beautiful, full-stack web application that helps students generate intelligent study schedules using an AI algorithm. Built with React (Vite), Tailwind CSS, FastAPI, and SQLite.
 
-## Features
+## How to Run Locally in VS Code (For Friends & Contributors)
 
-- **Authentication Module:** Register and Login securely with JWT authentication.
-- **Subject Management:** Add, edit, delete subjects with associated priority and difficulty levels.
-- **Study Planner Module:** Enter daily study hours and exam date, and an AI Agent allocates daily hours, weekly hours, and revision schedules.
-- **Progress Tracking:** Update subject completion percentage dynamically.
-- **Analytics Dashboard:** Visualize study hours and progress using beautiful Recharts.
-
-## Tech Stack
-
-### Frontend
-- React.js (Vite)
-- Tailwind CSS
-- Axios
-- React Router DOM
-- Recharts
-- Lucide React (Icons)
-
-### Backend
-- Python 3.12 (FastAPI)
-- PostgreSQL
-- SQLAlchemy
-- Passlib & PyJWT
-
-### Deployment
-- Docker
-- Docker Compose
-
-## Installation
+If you have cloned this repository and want to run it on your own Windows computer using VS Code, follow these simple steps:
 
 ### Prerequisites
-- Docker and Docker Compose installed on your system.
+Before you start, make sure you have installed:
+1. **[Node.js](https://nodejs.org/en/download/)** (for the React Frontend)
+2. **[Python](https://www.python.org/downloads/)** (for the FastAPI Backend)
+3. **[Git](https://git-scm.com/downloads)** (to clone the repo)
 
-### Environment Setup
-No manual `.env` file is necessary for the default Docker setup as it's handled in `docker-compose.yml`, but here are the key variables used:
-- `DATABASE_URL`: `postgresql://postgres:postgres@db:5432/study_planner`
-- `VITE_API_URL`: `http://localhost:8000/api`
+### Step 1: Clone the Repository
+Open VS Code, open a new Terminal (`Ctrl + ~`), and run:
+```bash
+git clone https://github.com/Anushaym625/ai-study-planner.git
+cd ai-study-planner
+```
 
-### Running the Application
+### Step 2: Install Frontend Dependencies
+```bash
+cd frontend
+npm install
+cd ..
+```
 
-1. Open a terminal in the root directory.
-2. Run the following command to build and start the containers:
-   ```bash
-   docker-compose up --build
-   ```
-3. Access the Frontend at: `http://localhost:5173`
-4. Access the Backend API Docs (Swagger) at: `http://localhost:8000/docs`
+### Step 3: Install Backend Dependencies
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+cd ..
+```
 
-## Database Setup
+### Step 4: Run the App with One Click!
+Once everything is installed, you never have to type those commands again.
 
-The database will be automatically created and migrations (table creations) are run automatically on startup via SQLAlchemy `create_all()`.
+Just double click the **`start.bat`** file located in the main folder (or type `.\start.bat` in the VS Code terminal). 
+This will automatically launch:
+- The Backend API on `http://localhost:8000`
+- The Frontend UI on `http://localhost:5173`
 
-## API Documentation
+Go to **http://localhost:5173** in your browser to start studying!
 
-FastAPI auto-generates Swagger documentation. After running the app, visit `http://localhost:8000/docs` to see all available endpoints:
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `GET, POST, PUT, DELETE /api/subjects/`
-- `POST /api/planner/generate`
-- `GET /api/planner/history`
-- `GET, POST /api/progress/`
-- `GET /api/dashboard/`
+---
 
-## Screenshots
-
-*(Add screenshots of your application here)*
+## Features
+- **Modern Glassmorphism UI**: Beautiful, animated frosted glass interfaces.
+- **Authentication**: Secure bcrypt-hashed passwords and JWT tokens.
+- **Study Planner**: Add subjects, difficulty, and automatically generate balanced study plans.
+- **Progress Tracking & Analytics**: Interactive Donut and Line charts built with Recharts.
